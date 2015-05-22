@@ -6,11 +6,17 @@ Tired of seeing hardly readable outputs like this?
 
 ![regular console.log](https://pbs.twimg.com/media/CFmZABUW0AAqAIK.png)
 
-Replace them with simple and beautiful outputs like following!
+Replace them with something more elegant!
 
 ![better log](https://pbs.twimg.com/media/CFmZBRnWoAABjJi.png)
 
 ## Usage
+
+Installation:
+
+```bash
+npm install better-log --save
+```
 
 Using as regular function:
 
