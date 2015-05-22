@@ -6,6 +6,7 @@ var map = Array.prototype.map;
 
 function betterLog() {
 	return log.apply(this, map.call(arguments, function (arg) {
+		if (typeof arg === 'string') return arg;
 		return inspect(arg, { depth: 1, colors: true });
 	}));
 }

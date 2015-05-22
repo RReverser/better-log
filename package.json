@@ -1,6 +1,6 @@
 {
   "name": "better-log",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "console.log wrapper for a bit more readable output",
   "main": "index.js",
   "repository": {
