@@ -1,0 +1,22 @@
+{
+  "name": "better-log",
+  "version": "0.0.0",
+  "description": "console.log wrapper for a bit more readable output",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rreverser/better-log.git"
+  },
+  "keywords": [
+    "console",
+    "log",
+    "readability",
+    "inspect"
+  ],
+  "author": "Ingvar Stepanyan <me@rreverser.com> (http://rreverser.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rreverser/better-log/issues"
+  },
+  "homepage": "https://github.com/rreverser/better-log#readme"
+}
