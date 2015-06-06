@@ -12,11 +12,11 @@ function betterLog() {
 }
 
 betterLog.install = function () {
-	console.log = betterLog;
+	return console.log = betterLog;
 };
 
 betterLog.uninstall = function () {
-	console.log = log;
+	return console.log = log;
 };
 
 module.exports = betterLog;

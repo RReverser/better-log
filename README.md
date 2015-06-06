@@ -32,6 +32,14 @@ require('better-log').install();
 console.log({ x: 1, y: 'prop' });
 ```
 
+or
+
+```javascript
+require('better-log/install');
+```
+
+(useful for ES6-style `import 'better-log/install'`)
+
 Restoring native `console.log`:
 
 ```javascript
