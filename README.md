@@ -12,20 +12,13 @@ Replace them with something more elegant!
 
 ## Usage
 
-Installation:
+## Installation:
 
 ```bash
 npm install better-log --save
 ```
 
-Using as regular function:
-
-```javascript
-var log = require('better-log');
-log({ x: 1, y: 'prop' });
-```
-
-Installation instead of native `console.log` (API is 100% compatible):
+## Replacing built-in `console.log`
 
 ```javascript
 require('better-log').install();
@@ -44,6 +37,13 @@ Restoring native `console.log`:
 
 ```javascript
 require('better-log').uninstall();
+```
+
+## Manual usage as a regular function
+
+```javascript
+var log = require('better-log');
+log({ x: 1, y: 'prop' });
 ```
 
 That's it!
