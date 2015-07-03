@@ -12,38 +12,34 @@ Replace them with something more elegant!
 
 ## Usage
 
-## Installation:
-
-```bash
-npm install better-log --save
-```
-
-## Replacing built-in `console.log`
+### Patching built-in `console` (API is 100% compatible)
 
 ```javascript
-require('better-log').install();
+require('better-log/install'); // ES6: import 'better-log/install';
 console.log({ x: 1, y: 'prop' });
+console.error('Something bad happened :(');
 ```
 
 or
 
 ```javascript
-require('better-log/install');
+require('better-log').install({ depth: 2 }); // optional config
+console.log({ x: 1, y: 'prop' });
+console.error('Something bad happened :(');
 ```
 
-(useful for ES6-style `import 'better-log/install'`)
-
-Restoring native `console.log`:
+#### Restoring native `console.log`:
 
 ```javascript
 require('better-log').uninstall();
 ```
 
-## Manual usage as a regular function
+### Manual usage as a regular function
 
 ```javascript
 var log = require('better-log');
 log({ x: 1, y: 'prop' });
+log.error('Something bad happened :(');
 ```
 
 That's it!
