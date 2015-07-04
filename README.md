@@ -37,7 +37,7 @@ require('better-log').uninstall();
 ### Manual usage as a regular function
 
 ```javascript
-var log = require('better-log');
+var log = require('better-log')/* .setConfig({ depth: 2 }) */;
 log({ x: 1, y: 'prop' });
 log.error('Something bad happened :(');
 ```

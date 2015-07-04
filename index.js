@@ -9,6 +9,7 @@ var config = { depth: 1, colors: true };
 
 function setConfig(newConfig) {
 	extend(config, newConfig);
+	return betterLog;
 }
 
 function beautifyArgs() {
