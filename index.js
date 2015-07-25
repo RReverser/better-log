@@ -12,11 +12,28 @@ function setConfig(newConfig) {
 	return betterLog;
 }
 
-function beautifyArgs() {
+function beautifyArgs(maybeFormat) {
+	var formats = [];
 	var args = new Array(arguments.length);
-	for (var i = 0; i < arguments.length; i++) {
+	if (typeof maybeFormat === 'string') {
+		formats.push('%s');
+		args[0] = maybeFormat.replace(/%[sdj]/g, function (format) {
+			formats.push(format);
+			return '%s';
+		});
+	}
+	for (var i = 1; i < args.length; i++) {
 		var arg = arguments[i];
-		args[i] = typeof arg === 'string' ? arg : inspect(arg, config);
+		var format = i < formats.length ? formats[i] : '%?';
+		if (format === '%s' || format === '%?' && typeof arg === 'string') {
+			arg = String(arg);
+		} else {
+			if (format === '%d') {
+				arg = Number(arg);
+			}
+			arg = inspect(arg, config);
+		}
+		args[i] = arg;
 	}
 	return args;
 }
