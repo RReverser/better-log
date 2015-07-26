@@ -1,11 +1,14 @@
 {
   "name": "better-log",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "console.log wrapper for a bit more readable output",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rreverser/better-log.git"
+  },
+  "scripts": {
+    "test": "node test"
   },
   "keywords": [
     "console",

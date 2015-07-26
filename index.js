@@ -15,14 +15,15 @@ function setConfig(newConfig) {
 function beautifyArgs(maybeFormat) {
 	var formats = [];
 	var args = new Array(arguments.length);
-	if (typeof maybeFormat === 'string') {
+	var i = 0;
+	if (typeof maybeFormat === 'string' && args.length > 1) {
 		formats.push('%s');
-		args[0] = maybeFormat.replace(/%[sdj]/g, function (format) {
+		args[i++] = maybeFormat.replace(/%[sdj]/g, function (format) {
 			formats.push(format);
 			return '%s';
 		});
 	}
-	for (var i = 1; i < args.length; i++) {
+	while (i < args.length) {
 		var arg = arguments[i];
 		var format = i < formats.length ? formats[i] : '%?';
 		if (format === '%s' || format === '%?' && typeof arg === 'string') {
@@ -33,17 +34,17 @@ function beautifyArgs(maybeFormat) {
 			}
 			arg = inspect(arg, config);
 		}
-		args[i] = arg;
+		args[i++] = arg;
 	}
 	return args;
 }
 
 function betterLog() {
-	return log.apply(this, beautifyArgs.apply(undefined, arguments));
+	return log.apply(console, beautifyArgs.apply(undefined, arguments));
 }
 
 function betterError() {
-	return error.apply(this, beautifyArgs.apply(undefined, arguments));
+	return error.apply(console, beautifyArgs.apply(undefined, arguments));
 }
 
 betterLog.error = betterError;
