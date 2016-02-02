@@ -28,7 +28,7 @@ console.log({ x: 1, y: 'prop' });
 console.error('Something bad happened :(');
 ```
 
-#### Restoring native `console.log`:
+#### Restoring native `console.log` and `console.error`:
 
 ```javascript
 require('better-log').uninstall();

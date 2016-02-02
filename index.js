@@ -58,7 +58,8 @@ betterLog.install = function (newConfig) {
 };
 
 betterLog.uninstall = function () {
-	return console.log = log;
+        console.error = error; 
+        return console.log = log;
 };
 
 module.exports = betterLog;
