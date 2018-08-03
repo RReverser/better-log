@@ -1,5 +1,7 @@
 # better-log
 
+**UPDATE: This is no longer necessary in Node.js 10.x.x as it colors output of `console.log` by default.**
+
 console.log wrapper for a bit more readable output in Node.js
 
 Tired of seeing hardly readable outputs like this?
